@@ -1,0 +1,39 @@
+Messages:
+  SecretFound: '&aPrachSecrety &8> &7Nasel si &e%SECRET% &7Secret!'
+  FoundTitleHeader: '&a%SECRET%'
+  FoundTitleFooter: '&7Nalezen!'
+  AlreadyFound: '&aPrachSecrety &8> &cTento secret si jiz nasel'
+  SecretCreated: '&aPrachSecrety &8> &eSecret &c%SECRET% &evytvoren!'
+  Reload: '&aPrachSecrety &8> &a!'
+  NoPermReload: '&aPrachSecrety &8> &cNa toto nemas pravo!'
+  SubCommandnotFound: '&aPrachSecrety &8> &cPrikaz nenalezen!'
+  balanceAddSuccess: '&aPrachSecrety &8> &7Bylo ti pripsano &e%s &7!'
+  balanceAddError: "&aPrachSecrety &8> &cCastku &e%s &cnebylo mozne pridat!"
+Settings:
+  CommandOnFound: tellraw %PLAYER% "Našel si Secret!"
+  Vault:
+    Enable: true
+    Money: 500
+  Title-Time: 1
+Items:
+  SecretItem:
+    Type: 'EMERALD'
+    Slot: 0
+    Name: '&aSecrety'
+    Lore: '&aNalezeny Secrety'
+  ItemNoSecretFound:
+    Type: 'BARRIER'
+    Name: '&c:(!!'
+    Lore: '&8> &7Zatim si zadne Secrety nenasel'
+  ItemSecretFound:
+    Type: 'GOLD_BLOCK'
+    SecretDisplayColor: '&a'
+    Lore: '&8> &7Nalezeno!'
+  ItemTotalFoundSecrets:
+    Type: 'EMERALD'
+    Name: '&eNalezene Secrety'
+    TotalFoundSecretsLoreColor: '&7'
+Sign:
+  line1: '&8[&aSecret&8]'
+  line3: '&7<Klikni na me>'
+  line4: ' '

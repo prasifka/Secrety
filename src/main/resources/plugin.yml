@@ -1,0 +1,9 @@
+name: Secrets
+version: '${project.version}'
+main: eu.hacraft.secrets.Secrets
+api-version: 1.19
+prefix: [ Prach ]
+depend: [ Vault ]
+authors: [ Prach ]
+commands:
+  secrets:
