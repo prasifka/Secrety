@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import eu.hacraft.secrets.listeners.InventoryClickListener;
-import eu.hacraft.secrets.listeners.InventoryItem;
 import eu.hacraft.secrets.listeners.SignClickListener;
 import eu.hacraft.secrets.listeners.SignCreateListener;
 import eu.hacraft.secrets.methods.ItemUtil;
@@ -35,20 +34,18 @@ public class Secrets extends JavaPlugin implements Listener {
         LOGGER = getLogger();
         plugin = this;
         getLogger().info("------------------------- Secrets " + getDescription().getVersion() + " -------------------------");
-        getLogger().info("Secrets " + getDescription().getVersion() + " is loading... [" + Bukkit.getVersion() + "]");
-        getLogger().info("Plugin by " + getDescription().getAuthors());
+        getLogger().info("Secrety " + getDescription().getVersion() + " se nacita [" + Bukkit.getVersion() + "]");
         getLogger().info("Updated 8. 1. 2023");
         if (hasVault()) {
-            getLogger().info("Vault detected!");
+            getLogger().info("Vault nalezen!");
             VaultUtils.setupEconomy(this);
         } else {
-            getLogger().info("Vault not detected!");
+            getLogger().info("Vault nenalezen");
         }
         getServer().getPluginManager().registerEvents(new SignClickListener(this), this);
         getServer().getPluginManager().registerEvents(new SignCreateListener(this), this);
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
-        getServer().getPluginManager().registerEvents(new InventoryItem(this), this);
-        getLogger().info("Version " + getDescription().getVersion() + " Was loaded successfully!");
+        getLogger().info("Verze " + getDescription().getVersion() + " nactena!");
         getLogger().info("-----------------------------------------------------------------");
         loadConfig();
         saveConfig();
@@ -56,7 +53,7 @@ public class Secrets extends JavaPlugin implements Listener {
     }
 
     public void onDisable() {
-        getLogger().info("[SECRETS] Plugin disabled");
+        getLogger().info("[PrachSECRETS] Plugin vypnut");
     }
 
     public void loadConfig() {
@@ -65,9 +62,9 @@ public class Secrets extends JavaPlugin implements Listener {
         cfg.options().copyDefaults(true);
     }
 
-    public String Linie1 = getConfig().getString("Sign.line1").replace("&", "§");
-    public String Linie3 = getConfig().getString("Sign.line3").replace("&", "§");
-    public String Linie4 = getConfig().getString("Sign.line4").replace("&", "§");
+    public String line1 = getConfig().getString("Sign.line1").replace("&", "§");
+    public String line3 = getConfig().getString("Sign.line3").replace("&", "§");
+    public String line4 = getConfig().getString("Sign.line4").replace("&", "§");
 
     public boolean onCommand(CommandSender sender, Command cmd, String cmdlable, String[] args) {
         if (args.length == 0) {
@@ -134,12 +131,12 @@ public class Secrets extends JavaPlugin implements Listener {
             }
         } else if (args[0].equalsIgnoreCase("info")) {
             if (sender.hasPermission("secrets.info")) {
-                sender.sendMessage("§a----------§9Secrets§a----------\n" + "§9Commands:\n" + "§a/secrets §c- §aShow the Secrets GUI\n" + "§a/secrets reload §c- §aReload the Config\n" + "§a/secrets info §c- §aShow this Page\n" + "§aVersion: §c" + getDescription().getVersion() + " §aAuthors: §c"
-                        + getDescription().getAuthors() + "\n" + "§a----------§9Secrets§a----------");
+                sender.sendMessage("§a----------§9PrachSecrety§a----------\n" + "§9Prikazy:\n" + "§a/secrets §c- §aGUI se Secrety\n" + "§a/secrets reload §c- §aReload\n" + "§a/secrets info §c- §aTato stranka\n" + "§aVerze: §c" + getDescription().getVersion() + " §aAutor: §c"
+                        + getDescription().getAuthors() + "\n" + "§a----------§9PrachSecrety§a----------");
                 return true;
             } else {
-                sender.sendMessage("§a----------§9Secrets§a----------\n" + "§9Commands:\n" + "§a/secrets §c- §aShow the Secrets GUI\n" + "§a/secrets info §c- §aShow this Page\n" + "§aVersion: §c" + getDescription().getVersion() + " §aAuthors: §c" + getDescription().getAuthors() + "\n"
-                        + "§a----------§9Secrets§a----------");
+                sender.sendMessage("§a----------§9PrachSecrety§a----------\n" + "§9Prikazy:\n" + "§a/secrets §c- §aGUI se Secrety\n" + "§a/secrets info §c- §aTato stranka\n" + "§aVerze: §c" + getDescription().getVersion() + " §aAutor: §c" + getDescription().getAuthors() + "\n"
+                        + "§a----------§9PrachSecrety§a----------");
 
             }
         } else {
@@ -159,9 +156,7 @@ public class Secrets extends JavaPlugin implements Listener {
         }
     }
 
-
     public static Plugin getPlugin() {
         return plugin;
     }
-
 }

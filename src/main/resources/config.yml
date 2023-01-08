@@ -16,11 +16,6 @@ Settings:
     Money: 500
   Title-Time: 1
 Items:
-  SecretItem:
-    Type: 'EMERALD'
-    Slot: 0
-    Name: '&aSecrety'
-    Lore: '&aNalezeny Secrety'
   ItemNoSecretFound:
     Type: 'BARRIER'
     Name: '&c:(!!'

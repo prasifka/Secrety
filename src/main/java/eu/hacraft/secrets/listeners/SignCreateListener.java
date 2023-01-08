@@ -26,8 +26,8 @@ public class SignCreateListener implements Listener {
 
             SecretCreator.createSecret(e.getLine(1));
             p.sendMessage(Secretcreate);
-            e.setLine(0, main.Linie1);
-            e.setLine(2, main.Linie3);
+            e.setLine(0, main.line1);
+            e.setLine(2, main.line3);
         }
     }
 }
